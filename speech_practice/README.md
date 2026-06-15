@@ -32,6 +32,8 @@ Requirements:
 - **An OpenAI API key** for chat + text-to-speech — sign up at <https://platform.openai.com>
 
 ```bash
+git clone https://github.com/mamnunam/language_tutor.git
+cd language_tutor/speech_practice
 npm install
 npm run dev
 ```
@@ -52,11 +54,9 @@ Keys are stored only in your browser (`localStorage`). They're sent directly to 
 The app is built and shipped as a **Cloudflare Worker** via `wrangler`. The TanStack Start build emits both the SSR Worker entry and the client bundle in one step.
 
 ```bash
-# Build the worker + client assets
-npm run build
-
-# Deploy to Cloudflare Workers
-npx wrangler deploy
+# From language_tutor/speech_practice/
+npm run build       # build the worker + client assets
+npx wrangler deploy # deploy to Cloudflare Workers
 ```
 
 `wrangler.jsonc` is the deploy manifest. Out of the box it sets:
